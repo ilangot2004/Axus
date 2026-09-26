@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, User, Users, Building2, Zap, Shield, Sparkles, MessageSquare } from 'lucide-react';
+import { ArrowRight, CheckCircle2, User, Users, Building2, Zap, Shield, Sparkles } from 'lucide-react';
 import '../styles/Solutions.css';
 
 const solutionsData = [

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Cookie, X } from 'lucide-react';
 import '../styles/CookieConsent.css';
@@ -7,25 +7,6 @@ const COOKIE_STORAGE_KEY = 'axus_cookie_consent';
 
 const CookieConsent = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [isAttention, setIsAttention] = useState(false);
-    const barRef = useRef(null);
-    const attentionTimeoutRef = useRef(null);
-    const lastAttentionTimeRef = useRef(0);
-
-    const triggerAttention = useCallback(() => {
-        const now = Date.now();
-        if (now - lastAttentionTimeRef.current < 500) return;
-        lastAttentionTimeRef.current = now;
-
-        setIsAttention(false);
-        requestAnimationFrame(() => {
-            setIsAttention(true);
-            if (attentionTimeoutRef.current) clearTimeout(attentionTimeoutRef.current);
-            attentionTimeoutRef.current = setTimeout(() => {
-                setIsAttention(false);
-            }, 600);
-        });
-    }, []);
 
     useEffect(() => {
         const consent = localStorage.getItem(COOKIE_STORAGE_KEY);
@@ -43,44 +24,6 @@ const CookieConsent = () => {
         return () => window.removeEventListener('open-cookie-consent', handleOpen);
     }, []);
 
-    // Prevent page scrolling while cookie popup is open and trigger gentle motion on interaction attempt
-    useEffect(() => {
-        if (isVisible) {
-            document.body.style.overflow = 'hidden';
-
-            const handleOutsideClick = (e) => {
-                if (barRef.current && !barRef.current.contains(e.target)) {
-                    triggerAttention();
-                }
-            };
-
-            const handleScrollAttempt = () => {
-                triggerAttention();
-            };
-
-            const handleKeyScroll = (e) => {
-                if (['ArrowDown', 'ArrowUp', 'Space', 'PageDown', 'PageUp'].includes(e.code)) {
-                    triggerAttention();
-                }
-            };
-
-            window.addEventListener('click', handleOutsideClick, true);
-            window.addEventListener('wheel', handleScrollAttempt, { passive: true });
-            window.addEventListener('touchmove', handleScrollAttempt, { passive: true });
-            window.addEventListener('keydown', handleKeyScroll);
-
-            return () => {
-                document.body.style.overflow = '';
-                window.removeEventListener('click', handleOutsideClick, true);
-                window.removeEventListener('wheel', handleScrollAttempt);
-                window.removeEventListener('touchmove', handleScrollAttempt);
-                window.removeEventListener('keydown', handleKeyScroll);
-            };
-        } else {
-            document.body.style.overflow = '';
-        }
-    }, [isVisible, triggerAttention]);
-
     const handleAccept = () => {
         localStorage.setItem(COOKIE_STORAGE_KEY, 'accepted');
         setIsVisible(false);
@@ -95,8 +38,7 @@ const CookieConsent = () => {
 
     return (
         <aside
-            ref={barRef}
-            className={`cookie-consent-bar ${isAttention ? 'attention-nudge' : ''}`}
+            className="cookie-consent-bar"
             aria-label="Cookie consent banner"
             role="dialog"
         >

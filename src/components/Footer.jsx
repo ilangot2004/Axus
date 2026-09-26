@@ -16,10 +16,10 @@ const Footer = () => {
                             <img src={LogoText} alt="Axus Infotech" className="footer-logo" />
                         </Link>
                         <div className="social-links">
-                            <a href="#" aria-label="Instagram"><Instagram size={20} strokeWidth={1.5} /></a>
-                            <a href="#" aria-label="LinkedIn"><Linkedin size={20} strokeWidth={1.5} /></a>
-                            <a href="#" aria-label="Twitter"><Twitter size={20} strokeWidth={1.5} /></a>
-                            <a href="#" aria-label="Facebook"><Facebook size={20} strokeWidth={1.5} /></a>
+                            <button type="button" aria-label="Instagram"><Instagram size={20} strokeWidth={1.5} /></button>
+                            <button type="button" aria-label="LinkedIn"><Linkedin size={20} strokeWidth={1.5} /></button>
+                            <button type="button" aria-label="Twitter"><Twitter size={20} strokeWidth={1.5} /></button>
+                            <button type="button" aria-label="Facebook"><Facebook size={20} strokeWidth={1.5} /></button>
                         </div>
                     </div>
 

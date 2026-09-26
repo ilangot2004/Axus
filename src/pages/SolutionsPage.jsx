@@ -7,18 +7,14 @@ import {
     CheckCircle2,
     ArrowRight,
     Zap,
-    Shield,
     Clock,
     Layers,
     Cpu,
     Sparkles,
     ChevronDown,
-    Lock,
     GitBranch,
     FileCheck,
-    MessageSquare,
-    Server,
-    ExternalLink
+    MessageSquare
 } from 'lucide-react';
 import '../styles/SolutionsPage.css';
 
@@ -279,11 +275,12 @@ const faqs = [
     }
 ];
 
+const validTiers = ['individuals', 'teams', 'large-companies'];
+
 const SolutionsPage = ({ defaultTier = 'individuals' }) => {
     const [searchParams, setSearchParams] = useSearchParams();
     const tierParam = searchParams.get('tier');
 
-    const validTiers = ['individuals', 'teams', 'large-companies'];
     const initialTier = tierParam && validTiers.includes(tierParam) ? tierParam : defaultTier;
     const [activeTier, setActiveTier] = useState(initialTier);
     const [openFaq, setOpenFaq] = useState(null);

@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { ArrowRight } from 'lucide-react';
 import '../styles/Hero.css';
 
 const servicesList = [
-    { title: "AI AUTOMATION", link: "#" },
-    { title: "SOFTWARE DEVELOPMENT", link: "#" },
-    { title: "WEBSITE DEVELOPMENT", link: "#" },
-    { title: "MANAGED SERVICES", link: "#" },
-    { title: "MOBILE APP DEVELOPMENT", link: "#" }
+    { title: "AI AUTOMATION", link: "/#services" },
+    { title: "SOFTWARE DEVELOPMENT", link: "/#services" },
+    { title: "WEBSITE DEVELOPMENT", link: "/#services" },
+    { title: "MANAGED SERVICES", link: "/#services" },
+    { title: "MOBILE APP DEVELOPMENT", link: "/#services" }
 ];
 
 const Hero = () => {
@@ -41,7 +40,7 @@ const Hero = () => {
                     <div className="services-nav-bar">
                         {servicesList.map((service, index) => (
                             <div key={index} className="service-nav-item">
-                                <a href={service.link}>{service.title}</a>
+                                <HashLink smooth to={service.link}>{service.title}</HashLink>
                             </div>
                         ))}
                     </div>

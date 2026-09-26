@@ -2,6 +2,7 @@ import React from 'react';
 import CountUp from 'react-countup';
 import { ArrowUpRight } from 'lucide-react';
 import '../styles/Portfolio.css';
+/*
 const projects = [
     {
         title: "Demo1.ai",
@@ -32,6 +33,7 @@ const projects = [
         bg: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
     }
 ];
+*/
 
 const Portfolio = () => {
     return (

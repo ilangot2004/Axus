@@ -104,7 +104,8 @@
 
 }
 
-.social-links a {
+.social-links a,
+.social-links button {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -114,9 +115,13 @@
     justify-content: center;
     color: #444444;
     transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.social-links button:hover {
     background: #000000;
     color: #ffffff;
     transform: translateY(-3px);
