@@ -1,0 +1,49 @@
+/* Process.css */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step-card {
+    position: relative;
+    padding: 2rem;
+    background: var(--card-dark);
+    border-radius: var(--radius-card);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.step-number {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
+    position: absolute;
+    top: 0rem;
+    right: 1rem;
+    line-height: 1;
+}
+
+.step-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(31, 182, 255, 0.1), rgba(0, 224, 255, 0.05));
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    border: 1px solid rgba(31, 182, 255, 0.2);
+}
+
+.step-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.step-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}

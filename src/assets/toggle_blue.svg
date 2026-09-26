@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140" width="320" height="140">
+  <defs>
+    <clipPath id="pill">
+      <rect x="6" y="10" width="308" height="120" rx="60" />
+    </clipPath>
+  </defs>
+
+  <!-- Transparent background -->
+  <g clip-path="url(#pill)">
+    <!-- Blue capsule -->
+    <rect x="6" y="10" width="308" height="120" rx="60" fill="#1E5EA7"/>
+
+    <!-- White left section with angled divider -->
+    <path
+      d="M66 10
+         H156
+         L139 130
+         H66
+         A60 60 0 0 1 66 10Z"
+      fill="#FFFFFF"/>
+
+    <!-- Blue check -->
+    <path
+      d="M62 69 L79 86 L111 48"
+      fill="none"
+      stroke="#1E5EA7"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"/>
+
+    <!-- White X -->
+    <path
+      d="M207 50 L251 94 M251 50 L207 94"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,200 @@
+/* ClientsAndCreativity.css */
+.clients-creativity-section {
+    background-color: #ffffff;
+    z-index: 2;
+    position: relative;
+}
+
+/* Clients Marquee Area */
+.clients-area {
+    padding: 60px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.clients-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.clients-marquee {
+    overflow: hidden;
+}
+
+.client-logo-wrapper {
+    margin: 0 40px;
+}
+
+.client-logo-img {
+    height: 48px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logo-img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Creativity Banner Area */
+.creativity-area {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(250,250,250,1) 0%, rgba(244,244,244,1) 100%);
+}
+
+.creativity-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.creativity-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px 60px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.creativity-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 600;
+    color: #000000;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.creativity-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.creativity-btn:hover {
+    background: #333333;
+}
+
+.smile-icon {
+    font-size: 20px;
+}
+
+/* Floating Background Images */
+.creativity-floating-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.floating-item {
+    position: absolute;
+    width: clamp(100px, 15vw, 180px);
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    animation: slowFloat 8s ease-in-out infinite alternate;
+}
+
+/* Distributed positions matching the collage chaos in Elementor */
+.float-0 { top: 10%; left: 10%; animation-delay: 0s; }
+.float-1 { top: 60%; left: 5%; animation-delay: -2s; transform: scale(0.85); }
+.float-2 { top: 15%; left: 30%; animation-delay: -4s; transform: scale(0.7); }
+.float-3 { top: 75%; left: 25%; animation-delay: -1s; }
+.float-4 { top: 5%; right: 25%; animation-delay: -3s; }
+.float-5 { top: 70%; right: 30%; animation-delay: -5s; transform: scale(0.9); }
+.float-6 { top: 15%; right: 5%; animation-delay: -1.5s; transform: scale(0.75); }
+.float-7 { top: 60%; right: 8%; animation-delay: -4.5s; }
+
+@keyframes slowFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-30px) rotate(5deg); }
+}
+
+@media (max-width: 992px) {
+    .floating-item {
+        opacity: 0.4; /* Fade out backgrounds on mobile to prioritize text */
+    }
+}
+
+@media (max-width: 768px) {
+    .clients-area {
+        padding: 40px 0;
+    }
+
+    .clients-title {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .client-logo-wrapper {
+        margin: 0 24px;
+    }
+
+    .client-logo-img {
+        height: 36px;
+    }
+
+    .creativity-area {
+        padding: 60px 0;
+    }
+
+    .creativity-container {
+        min-height: 300px;
+    }
+
+    .creativity-content {
+        padding: 30px 24px;
+        border-radius: 20px;
+    }
+
+    .creativity-title {
+        font-size: clamp(24px, 6vw, 36px);
+        margin-bottom: 1.5rem;
+    }
+
+    .creativity-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .floating-item {
+        opacity: 0.25;
+        width: clamp(60px, 12vw, 120px);
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-area {
+        padding: 30px 0;
+    }
+
+    .creativity-area {
+        padding: 40px 0;
+    }
+
+    .creativity-content {
+        padding: 24px 16px;
+    }
+}

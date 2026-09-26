@@ -1,0 +1,43 @@
+/* Clients.css */
+.clients-section {
+    background-color: #ffffff;
+    z-index: 2;
+    position: relative;
+    padding: 60px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.clients-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.clients-marquee-container {
+    overflow: hidden;
+}
+
+.client-logo-wrapper {
+    margin: 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.client-logo-img {
+    height: 48px;
+    max-width: 170px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.75;
+    transition: all 0.3s ease;
+}
+
+.client-logo-img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}

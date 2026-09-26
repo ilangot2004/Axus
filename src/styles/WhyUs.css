@@ -1,0 +1,67 @@
+/* WhyUs.css */
+.comparison-table {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-dark);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comparison-header,
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    align-items: center;
+}
+
+.comparison-header {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.col.us {
+    color: var(--primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.col.freelancer {
+    color: var(--text-gray);
+}
+
+.col.feature {
+    font-weight: 500;
+}
+
+.icon-check {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .col.feature {
+        color: white;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.25rem;
+    }
+
+    .col:not(.feature) {
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,341 @@
+/* Portfolio.css */
+.portfolio-section {
+    background-color: #000000;
+    padding: 120px 0;
+    color: #ffffff;
+}
+
+.portfolio-header-area {
+    margin-bottom: 2rem;
+}
+
+.portfolio-header {
+    margin-bottom: 3rem;
+}
+
+.portfolio-main-title {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+/* Stats Row */
+.portfolio-stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: rem;
+}
+
+.stat-group {
+    display: flex;
+    gap: 4rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.stat-number {
+    font-size: clamp(48px, 8vw, 80px);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-size: 3.5rem;
+
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+}
+
+.stat-desc {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.stat-desc p {
+    font-size: 1.25rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 500px;
+}
+
+/* Projects List */
+.portfolio-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.portfolio-card {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.portfolio-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0) 60%);
+    z-index: 1;
+}
+
+.portfolio-card-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+}
+
+.portfolio-card-info {
+    max-width: 600px;
+}
+
+.portfolio-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
+}
+
+.portfolio-description {
+    font-size: 1.15rem;
+    color: #ffffff;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.portfolio-card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.year-pill {
+    padding: 0.4rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.explore-btn:hover {
+    transform: translateY(-2px);
+    background-color: #f0f0f0;
+}
+
+/* Explore Footer */
+.portfolio-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.explore-title {
+    font-size: 2.5rem;
+    margin: 0 0 2rem 0;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.view-projects-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.view-projects-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .portfolio-section {
+        padding: 80px 0;
+    }
+
+    .portfolio-list {
+        margin-top: 3rem;
+    }
+
+    .portfolio-card-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+    .portfolio-card-actions {
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .portfolio-stats-row {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-section {
+        padding: 60px 0;
+    }
+
+    .portfolio-list {
+        margin-top: 2rem;
+    }
+
+    .portfolio-stats-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .stat-group {
+        flex-direction: row;
+        gap: 1.5rem;
+        min-width: auto;
+    }
+
+    .stat-item {
+        gap: 8px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .portfolio-card {
+        height: 500px;
+    }
+
+    .portfolio-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-section {
+        padding: 40px 0;
+    }
+
+    .portfolio-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .portfolio-main-title {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+    .stat-group {
+        min-width: auto;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .stat-item {
+        gap: 6px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .stat-desc {
+        min-width: auto;
+    }
+
+    .stat-desc p {
+        font-size: 1rem;
+    }
+
+    .portfolio-card {
+        height: 400px;
+    }
+
+    .portfolio-card-content {
+        padding-bottom: 2rem;
+        gap: 1.5rem;
+    }
+
+    .portfolio-title {
+        font-size: 1.75rem;
+    }
+
+    .portfolio-description {
+        font-size: 0.95rem;
+    }
+
+    .portfolio-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+
+    .explore-title {
+        font-size: 1.75rem;
+    }
+
+    .view-projects-btn {
+        padding: 0.75rem 2rem;
+        font-size: 0.95rem;
+    }
+}
