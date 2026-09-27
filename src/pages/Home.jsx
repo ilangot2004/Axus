@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
@@ -9,7 +9,26 @@ import Solutions from '../components/Solutions';
 import Creativity from '../components/Creativity';
 import StickyVideoFlow from '../components/StickyVideoFlow';
 
-const Home = () => {
+const Home = ({ scrollTo = null }) => {
+  useEffect(() => {
+    if (scrollTo) {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          const navbarHeight = 80;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - navbarHeight,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [scrollTo]);
+
   return (
     <main>
       <Hero />

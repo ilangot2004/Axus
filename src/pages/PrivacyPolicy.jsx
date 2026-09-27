@@ -108,8 +108,8 @@ const PrivacyPolicy = () => {
                         <p>If you have any questions or concerns regarding our privacy practices, our team is here to help.</p>
                         <div className="policy-contact-actions">
                             <Link to="/contact" className="btn btn-white">Contact Us</Link>
-                            <a href="mailto:contact@axusinfotech.com" className="btn btn-outline">
-                                <Mail size={16} /> contact@axusinfotech.com
+                            <a href="mailto:contact@axusinfotech.in" className="btn btn-outline">
+                                <Mail size={16} /> contact@axusinfotech.in
                             </a>
                         </div>
                     </div>

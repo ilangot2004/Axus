@@ -107,8 +107,8 @@ const RefundPolicy = () => {
                         <p>Our billing and management team is available to assist you with any questions or account inquiries.</p>
                         <div className="policy-contact-actions">
                             <Link to="/contact" className="btn btn-white">Contact Us</Link>
-                            <a href="mailto:contact@axusinfotech.com" className="btn btn-outline">
-                                <Mail size={16} /> contact@axusinfotech.com
+                            <a href="mailto:contact@axusinfotech.in" className="btn btn-outline">
+                                <Mail size={16} /> contact@axusinfotech.in
                             </a>
                         </div>
                     </div>

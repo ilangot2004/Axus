@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CountUp from 'react-countup';
 import { ArrowUpRight } from 'lucide-react';
 import '../styles/Portfolio.css';
@@ -91,10 +92,10 @@ const Portfolio = () => {
                 {/* Explore More Footer */}
                 <div className="portfolio-footer">
                     <h4 className="explore-title">Explore more?</h4>
-                    <a href="#portfolio" className="btn btn-secondary view-projects-btn">
+                    <Link to="/portfolio" className="btn btn-secondary view-projects-btn">
                         <span>View projects</span>
                         <ArrowUpRight size={20} />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

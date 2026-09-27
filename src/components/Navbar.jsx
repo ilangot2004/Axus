@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import logo from '../assets/AXUS LOGO.svg';
 import '../styles/Navbar.css';
 
@@ -38,11 +37,11 @@ const Navbar = () => {
                 </Link>
 
                 <ul className={`nav-links ${mobileOpen ? 'open' : ''}`}>
-                    <li><HashLink smooth to="/#" className="nav-link" onClick={closeMobile}>Home</HashLink></li>
-                    <li><HashLink smooth to="/#about" className="nav-link" onClick={closeMobile}>About Us</HashLink></li>
+                    <li><Link to="/" className="nav-link" onClick={closeMobile}>Home</Link></li>
+                    <li><Link to="/about" className="nav-link" onClick={closeMobile}>About Us</Link></li>
                     <li><Link to="/solutions" className="nav-link" onClick={closeMobile}>Solutions</Link></li>
-                    <li><HashLink smooth to="/#services" className="nav-link" onClick={closeMobile}>What We Do</HashLink></li>
-                    <li><HashLink smooth to="/#portfolio" className="nav-link" onClick={closeMobile}>Portfolio</HashLink></li>
+                    <li><Link to="/services" className="nav-link" onClick={closeMobile}>What We Do</Link></li>
+                    <li><Link to="/portfolio" className="nav-link" onClick={closeMobile}>Portfolio</Link></li>
                     <li className="nav-cta-mobile">
                         <Link to="/contact" className="btn" onClick={closeMobile}>Get Started</Link>
                     </li>

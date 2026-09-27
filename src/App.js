@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import RouteTitle from './components/RouteTitle';
 import Legal from './pages/Legal';
 import SolutionsPage from './pages/SolutionsPage';
 import CookieConsent from './components/CookieConsent';
@@ -14,10 +15,14 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <RouteTitle />
       <div className="App">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<Home scrollTo="about" />} />
+          <Route path="/services" element={<Home scrollTo="services" />} />
+          <Route path="/portfolio" element={<Home scrollTo="portfolio" />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/for-individuals" element={<SolutionsPage defaultTier="individuals" />} />

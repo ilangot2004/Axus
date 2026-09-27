@@ -1,14 +1,44 @@
 import React, { useState } from 'react';
-import { ArrowRight, MessageCircle, Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
+import { ArrowRight, MessageCircle, Mail, Phone, MapPin, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 import '../styles/Contact.css';
 
 const Contact = () => {
+    const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 5000);
+        setLoading(true);
+        setErrorMessage('');
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        // Web3Forms configuration
+        formData.append("access_key", "4194b6f9-a6cb-4ae9-b0f6-16e198d4d1ee");
+        formData.append("from_name", "Axus Infotech Website");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setSubmitted(true);
+                form.reset();
+                setTimeout(() => setSubmitted(false), 7000);
+            } else {
+                setErrorMessage(data.message || "Something went wrong. Please try again or reach out directly.");
+            }
+        } catch (error) {
+            setErrorMessage("Network error. Please check your connection or reach out via email.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     const whatsappMessage =
@@ -32,46 +62,65 @@ const Contact = () => {
                             <div className="success-message">
                                 <CheckCircle size={48} className="success-icon" />
                                 <h3>Message Sent!</h3>
-                                <p>Thank you for reaching out. We will get back to you shortly.</p>
+                                <p>Thank you for reaching out. We have received your inquiry and will get back to you shortly.</p>
                             </div>
                         ) : (
                             <form className="contact-form" onSubmit={handleSubmit}>
+                                {/* Honeypot Spam Protection */}
+                                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
+
                                 <div className="form-group row">
                                     <div className="form-col">
                                         <label htmlFor="firstName">First Name</label>
-                                        <input type="text" id="firstName" placeholder="John" required />
+                                        <input type="text" id="firstName" name="First Name" placeholder="John" required disabled={loading} />
                                     </div>
                                     <div className="form-col">
                                         <label htmlFor="lastName">Last Name</label>
-                                        <input type="text" id="lastName" placeholder="Doe" required />
+                                        <input type="text" id="lastName" name="Last Name" placeholder="Doe" required disabled={loading} />
                                     </div>
                                 </div>
                                 <div className="contact-row">
                                     <div className="form-col">
                                         <label htmlFor="email">Email Address</label>
-                                        <input type="email" id="email" placeholder="john@example.com" required />
+                                        <input type="email" id="email" name="Email" placeholder="john@example.com" required disabled={loading} />
                                     </div>
                                     <div className="form-col">
                                         <label htmlFor="phone">Phone Number</label>
-                                        <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
+                                        <input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000" disabled={loading} />
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="subject">Subject</label>
-                                    <select id="subject" required>
+                                    <select id="subject" name="Subject" required disabled={loading}>
                                         <option value="">Select a subject...</option>
-                                        <option value="ai-automation">AI Automation</option>
-                                        <option value="software">Software Development</option>
-                                        <option value="website">Website Development</option>
-                                        <option value="other">Other Inquiry</option>
+                                        <option value="AI Automation">AI Automation</option>
+                                        <option value="Software Development">Software Development</option>
+                                        <option value="Website Development">Website Development</option>
+                                        <option value="Other Inquiry">Other Inquiry</option>
                                     </select>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="message">Message</label>
-                                    <textarea id="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                                    <textarea id="message" name="Message" rows="5" placeholder="Tell us about your project..." required disabled={loading}></textarea>
                                 </div>
-                                <button type="submit" className="btn btn-primary submit-btn">
-                                    Send Message <ArrowRight size={20} />
+
+                                {errorMessage && (
+                                    <div className="contact-error-message">
+                                        <AlertCircle size={16} />
+                                        <span>{errorMessage}</span>
+                                    </div>
+                                )}
+
+                                <button type="submit" className="btn btn-primary submit-btn" disabled={loading}>
+                                    {loading ? (
+                                        <>
+                                            Sending Message... <Loader2 size={18} className="spinner-icon" />
+                                        </>
+                                    ) : (
+                                        <>
+                                            Send Message <ArrowRight size={20} />
+                                        </>
+                                    )}
                                 </button>
                             </form>
                         )}
@@ -85,7 +134,7 @@ const Contact = () => {
                                 <Mail className="info-icon" />
                                 <div className="info-text-group">
                                     <strong>Email</strong>
-                                    <a href="mailto:contact@axusinfotech.com">contact@axusinfotech.com</a>
+                                    <a href="mailto:contact@axusinfotech.in">contact@axusinfotech.in</a>
                                 </div>
                             </div>
                             <div className="info-item">

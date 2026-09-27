@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import '../styles/About.css';
 
@@ -34,9 +35,9 @@ const About = () => {
                         <p className="about-description">
                             Axus Infotech is a digital growth studio built by a talented team of engineers. We help businesses launch, scale, and automate their online presence through modern websites, intelligent automation, and conversion-focused strategies.
                         </p>
-                        <a href="#portfolio" className="btn btn-primary" style={{ display: 'inline-flex', marginTop: '1rem' }}>
+                        <Link to="/portfolio" className="btn btn-primary" style={{ display: 'inline-flex', marginTop: '1rem' }}>
                             View Our Work <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="about-content-right">

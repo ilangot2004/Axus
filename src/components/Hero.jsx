@@ -1,14 +1,14 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import '../styles/Hero.css';
 
 const servicesList = [
-    { title: "AI AUTOMATION", link: "/#services" },
-    { title: "SOFTWARE DEVELOPMENT", link: "/#services" },
-    { title: "WEBSITE DEVELOPMENT", link: "/#services" },
-    { title: "MANAGED SERVICES", link: "/#services" },
-    { title: "MOBILE APP DEVELOPMENT", link: "/#services" }
+    { title: "AI AUTOMATION", link: "/services" },
+    { title: "SOFTWARE DEVELOPMENT", link: "/services" },
+    { title: "WEBSITE DEVELOPMENT", link: "/services" },
+    { title: "MANAGED SERVICES", link: "/services" },
+    { title: "MOBILE APP DEVELOPMENT", link: "/services" }
 ];
 
 const Hero = () => {
@@ -27,9 +27,9 @@ const Hero = () => {
                             At Axus Infotech, we revolutionize businesses with data-driven solutions. Leveraging AI to drive growth through innovation, engagement, and measurable outcomes.
                         </p>
                         <div className="hero-cta-group">
-                            <HashLink smooth to="/#about" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                            <Link to="/about" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                                 Know More <ArrowRight size={18} />
-                            </HashLink>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ const Hero = () => {
                     <div className="services-nav-bar">
                         {servicesList.map((service, index) => (
                             <div key={index} className="service-nav-item">
-                                <HashLink smooth to={service.link}>{service.title}</HashLink>
+                                <Link to={service.link}>{service.title}</Link>
                             </div>
                         ))}
                     </div>

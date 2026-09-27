@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import { Facebook, Instagram, Linkedin, Twitter, Mail, ChevronDown } from 'lucide-react';
 import '../styles/Footer.css';
 import LogoText from '../assets/AXUS INFOTECH.svg';
@@ -26,11 +25,11 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4>Services</h4>
                         <ul>
-                            <li><HashLink smooth to="/#services">AI Automation</HashLink></li>
-                            <li><HashLink smooth to="/#services">Software Development</HashLink></li>
-                            <li><HashLink smooth to="/#services">Website Development</HashLink></li>
-                            <li><HashLink smooth to="/#services">Mobile App Development</HashLink></li>
-                            <li><HashLink smooth to="/#services">Managed Services</HashLink></li>
+                            <li><Link to="/services">AI Automation</Link></li>
+                            <li><Link to="/services">Software Development</Link></li>
+                            <li><Link to="/services">Website Development</Link></li>
+                            <li><Link to="/services">Mobile App Development</Link></li>
+                            <li><Link to="/services">Managed Services</Link></li>
                         </ul>
                     </div>
 
@@ -51,8 +50,8 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4>Company</h4>
                         <ul>
-                            <li><HashLink smooth to="/#about">About Us</HashLink></li>
-                            <li><HashLink smooth to="/#portfolio">Our Portfolio</HashLink></li>
+                            <li><Link to="/about">About Us</Link></li>
+                            <li><Link to="/portfolio">Our Portfolio</Link></li>
                             <li><Link to="/contact">Contact Us</Link></li>
                         </ul>
                     </div>
@@ -65,7 +64,7 @@ const Footer = () => {
                         </div>
                         <div className="global-item email-item" style={{ marginTop: '12px' }}>
                             <Mail size={18} strokeWidth={2} />
-                            <span>contact@axusinfotech.com</span>
+                            <span>contact@axusinfotech.in</span>
                         </div>
                     </div>
                 </div>
