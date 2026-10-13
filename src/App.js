@@ -9,6 +9,7 @@ import RouteTitle from './components/RouteTitle';
 import Legal from './pages/Legal';
 import SolutionsPage from './pages/SolutionsPage';
 import CookieConsent from './components/CookieConsent';
+import NotFound from './pages/NotFound';
 import './index.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/cookie-policy" element={<Legal defaultTab="cookies" />} />
           <Route path="/refund-policy" element={<Legal defaultTab="refund" />} />
           <Route path="/legal" element={<Legal defaultTab="privacy" />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
         <CookieConsent />

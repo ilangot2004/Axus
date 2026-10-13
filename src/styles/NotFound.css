@@ -1,0 +1,135 @@
+/* NotFound.css - Axus Infotech 404 Page */
+
+.not-found-page {
+  background-color: #ffffff;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1.5rem 5rem;
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-body, 'Gilroy', sans-serif);
+}
+
+.not-found-container {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.not-found-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f1f5f9;
+  color: #0b3558;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.not-found-code {
+  font-family: var(--font-heading, 'Gilroy', sans-serif);
+  font-size: clamp(5rem, 12vw, 8.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #0b3558;
+  margin: 0 0 1rem;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #0b3558 0%, #1e5a8a 50%, #475d74 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.not-found-title {
+  font-family: var(--font-heading, 'Gilroy', sans-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.not-found-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #475d74;
+  margin: 0 auto 2.5rem;
+  max-width: 500px;
+}
+
+.not-found-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.not-found-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-btn-primary:hover {
+  background-color: #0b3558;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11, 53, 88, 0.2);
+  color: #ffffff;
+}
+
+.not-found-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f8f9fa;
+  color: #0b3558;
+  border: 1px solid #e2e8f0;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.not-found-btn-secondary:hover {
+  background-color: #edf2f7;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  color: #0b3558;
+}
+
+@media (max-width: 640px) {
+  .not-found-page {
+    padding: 6.5rem 1rem 4rem;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .not-found-btn-primary,
+  .not-found-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

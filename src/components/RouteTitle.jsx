@@ -63,8 +63,14 @@ const RouteTitle = () => {
             return;
         }
 
-        // 4. Fallback Default Homepage
-        document.title = DEFAULT_TITLE;
+        // 4. Root path homepage
+        if (pathname === '/') {
+            document.title = DEFAULT_TITLE;
+            return;
+        }
+
+        // 5. Fallback for unmapped routes (404)
+        document.title = `404 - Page Not Found${BRAND_SUFFIX}`;
     }, [location]);
 
     // Optional: On the homepage, update title dynamically as user scrolls through sections
